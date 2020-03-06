@@ -1,0 +1,112 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <input type="button" id="btnTest" value="click" />
+
+<script>
+    $(function () {
+        $("#btnTest").click(function () {
+           
+             let promiseA = new Promise((resolve, reject) =>
+           
+             {
+                $.ajax({
+                url: 'https://morning-shelf-84536.herokuapp.com/story1',
+                type: "GET",
+                data:{key:'value'},
+                dataType: "json",
+                success: function (data) 
+                {
+                    resolve(data)
+                    },
+                    error:function(error)
+                    {
+                        reject(error)
+                    }            
+            })
+        })
+
+        let promiseB = new Promise((resolve, reject) =>
+             {
+                $.ajax({
+                url: 'https://morning-shelf-84536.herokuapp.com/story2',
+                type: "GET",
+                data:{key:'value'},
+                dataType: "json",
+                success: function (data1) 
+                {
+                    resolve(data1)
+                    },
+                    error:function(error)
+                    {
+                        reject(error)
+                    }            
+            })
+        })
+
+        let promiseC = new Promise((resolve, reject) =>
+             {
+                $.ajax({
+                url: 'https://morning-shelf-84536.herokuapp.com/story3',
+                type: "GET",
+                data:{key:'value'},
+                dataType: "json",
+                success: function (data2) 
+                {
+                    resolve(data2)
+                    },
+                    error:function(error)
+                    {
+                        reject(error)
+                    }            
+            })
+        })
+
+        let promiseD = new Promise((resolve, reject) =>
+             {
+                $.ajax({
+                url: 'https://morning-shelf-84536.herokuapp.com/story4',
+                type: "GET",
+                data:{key:'value'},
+                dataType: "json",
+                success: function (data3) 
+                {
+                    resolve(data3)
+                    },
+                    error:function(error)
+                    {
+                        reject(error)
+                    }            
+            })
+        })
+
+           
+        promiseA.then(function(data) {
+  console.log(data);
+        });
+        promiseB.then(function(data1) {
+  console.log(data1);
+        });
+        promiseC.then(function(data2) {
+  console.log(data2);
+        });
+        promiseD.then(function(data3) {
+  console.log(data3);
+        });
+        
+            
+            
+
+        
+        
+    
+        })
+    });
+</script>
+</body>
+</html> 
